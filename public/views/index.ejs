@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="/script.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inconsolata', monospace;
+        }
+
+        span {
+            margin-right: 3px;
+        }
+
+        p {
+            margin-bottom: 3px;
+        }
+
+        .content {
+            width: 100%;
+            padding: 0 2.5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main,
+        .form-send {
+            width: 80%;
+            height: 80vh;
+            padding: 2%;
+            margin-top: 2%;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #ad50de;
+            margin-bottom: 3px;
+        }
+
+        .form-send {
+            height: auto;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .message {
+            width: 100%;
+            height: 40px;
+            padding: 0 2.5%;
+            margin-right: 3px;
+            border: 1px solid #ad50de;
+        }
+
+        .message:focus,
+        .message:active,
+        .send:focus,
+        .send:active {
+            outline: none;
+        }
+
+        .send:hover {
+            border: none;
+            cursor: pointer;
+            background-color: #ad50de;
+        }
+
+        .send {
+            padding: 0 40px;
+            border: none;
+            background-color: #7f32a8;
+            color: #ffffff;
+        }
+
+        .body-message {
+            width: 79%;
+            border: 1px solid #7f32a8;
+        }
+
+        .body-users {
+            width: 20%;
+            border: 1px solid #7f32a8;
+        }
+
+        .body-message,
+        .body-users {
+            padding: 10px;
+        }
+
+        @media (max-width: 992px) {
+
+            .main,
+            .form-send,
+            .body-message,
+            .body-users {
+                width: 100%;
+            }
+
+            .main {
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+
+            .body-message {
+                order: 2;
+                height: 87%;
+            }
+
+            .body-users {
+                order: 1;
+                height: 10%;
+            }
+        }
+    </style>
+    <title>app1</title>
+</head>
+
+<body>
+    <div class="content">
+        <div class="main">
+            <div id="body-message" class="body-message"></div>
+            <div id="body-users" class="body-users"></div>
+        </div>
+        <form id="form-send" class="form-send">
+            <input type="text" id="message" class="message" autocomplete="off">
+            <button type="submit" id="send" class="send">Send</button>
+        </form>
+    </div>
+</body>
+
+</html>
