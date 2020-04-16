@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io('/');
 
 const getBodyUsers = document.getElementById('body-users');
 const getBodyMessage = document.getElementById('body-message');
