@@ -18,12 +18,6 @@ app.get('/', (req, res) => {
     });
 });
 
-app.get('/:room', (req, res) => {
-    res.render('room', {
-        roomName: req.params.room
-    });
-});
-
 const users = {};
 
 io.on('connection', socket => {
